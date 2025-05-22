@@ -1,0 +1,21 @@
+/* Definisikan @property untuk warna */
+@property --warna-teks {
+  syntax: "<color>";   /* Warna seperti red, blue, yellow */
+  inherits: false;      /* Tidak diwariskan ke anak elemen */
+  initial-value: red;   /* Warna awal adalah merah */
+}
+
+/* Properti dalam teks */
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: var(--warna-teks); /* Pakai variabel CSS */
+  animation: ganti-warna 3s infinite alternate;
+}
+
+/* Animasi perubahan warna */
+@keyframes ganti-warna {
+  from { --warna-teks: red; }  /* Mulai dengan merah */
+  to { --warna-teks: blue; }   /* Berubah jadi biru */
+}
