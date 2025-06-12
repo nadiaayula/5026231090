@@ -1,12 +1,12 @@
 @extends('templatelatihan')
 @section('content')
 
-    <div class="text-center my-5">
-        <h4 class="mb-4">Page Counter</h4>
+    <div class="container-fluid px-5 py-4">
+        <h4 class="fw-semibold mb-4">Latihan 1 - Page Counter</h4>
 
-        <div class="alert alert-success d-inline-block px-4 py-3">
-            Anda Pengunjung ke: <strong>{{ $jumlah }}</strong>
+        <div class="alert alert-success px-4 py-3 mb-4 w-100" style="max-width: 100%;">
+            Anda Pengunjung ke: {{ $jumlah }}
         </div>
     </div>
-@endsection
 
+@endsection

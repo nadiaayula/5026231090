@@ -33,7 +33,7 @@
       gap: 10px;
     }
 
-    
+
     .profile {
       background: #e4dafc;
       border-radius: 12px;
@@ -150,11 +150,46 @@
         width: 100%;
       }
     }
+
+    .sub-navbar {
+    background-color: #e4dafc; /* ungu muda */
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 8px;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    }
+
+    .sub-navbar a {
+    text-decoration: none;
+    color: #5a3fb2; /* ungu tua */
+    font-weight: 500;
+    transition: color 0.2s ease;
+    }
+
+    .sub-navbar a:hover,
+    .sub-navbar a:focus,
+    .sub-navbar a:active {
+    color: #7a4bc2;
+    font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📚 Nadia Ayula's Web Dev Portfolio</h1>
+
+    <div class="sub-navbar">
+    <a href="/publish">All Front End</a>
+    <a href="/pegawai">Pegawai</a>
+    <a href="/makanan">Tugas CRUD</a>
+    <a href="#">EAS</a>
+    <a href="/latihan1">Latihan 1</a>
+    <a href="/latihan2">Latihan 2</a>
+    <a href="#">Latihan 3</a>
+    </div>
 
     <div class="profile">
       <img src="img/profile-anime.jpg" alt="Avatar" class="avatar" />
