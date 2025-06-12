@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\MakananController;
 
 
 /*
@@ -17,6 +18,15 @@ use App\Http\Controllers\PegawaiDBController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//route makanan
+Route::get('/makanan', [MakananController::class, 'index'])->name('makanan.index');
+Route::get('/makanan/tambah', [MakananController::class, 'create'])->name('makanan.create');
+Route::post('/makanan/store', [MakananController::class, 'store'])->name('makanan.store');
+Route::get('/makanan/edit/{id}', [MakananController::class, 'edit'])->name('makanan.edit');
+Route::post('/makanan/update', [MakananController::class, 'update'])->name('makanan.update');
+Route::delete('/makanan/{id}', [MakananController::class, 'destroy'])->name('makanan.destroy');
+Route::get('/makanan/cari', [MakananController::class, 'cari'])->name('makanan.cari');
 
 //route pegawaiDB
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
