@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manajemen Makanan - CRUD 5026231090</title>
+    <title>Manajemen Makanan - 5026231090</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Font + Bootstrap -->
@@ -123,7 +123,7 @@
             <li class="nav-item"><a class="nav-link" href="/pegawai">Pegawai</a></li>
             <li class="nav-item"><a class="nav-link" href="/makanan">Tugas CRUD</a></li>
             <li class="nav-item"><a class="nav-link" href="#">EAS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Latihan 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="/latihan1">Latihan 1</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Latihan 2</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Latihan 3</a></li>
         </ul>

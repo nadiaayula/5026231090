@@ -6,7 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MakananController;
-
+use App\Http\Controllers\PageCounterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,9 @@ use App\Http\Controllers\MakananController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//latihan 1 Soal Perempuan
+Route::get('/latihan1', [PageCounterController::class, 'index']);
 
 //route makanan
 Route::get('/makanan', [MakananController::class, 'index'])->name('makanan.index');

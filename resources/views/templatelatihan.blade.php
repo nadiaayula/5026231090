@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Manajemen Pegawai - 5026231090</title>
+    <title>5026231090 - NADIA AYULA ASSYAPUTRI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
