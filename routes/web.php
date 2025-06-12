@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\PageCounterController;
+use App\Http\Controllers\KaryawanDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,14 @@ use App\Http\Controllers\PageCounterController;
 
 //latihan 1 Soal Perempuan
 Route::get('/latihan1', [PageCounterController::class, 'index']);
+
+//latihan 2 Soal Laki-Laki Ganjil
+//route karyawanDB
+Route::get('/latihan2', [KaryawanDBController::class, 'index']);
+Route::get('/latihan2/tambah', [KaryawanDBController::class, 'tambah']);
+Route::post('/latihan2/store', [KaryawanDBController::class, 'store']);
+Route::post('/latihan2/update',[KaryawanDBController::class, 'update']);
+Route::get('/latihan2/hapus/{id}', [KaryawanDBController::class, 'hapus']);
 
 //route makanan
 Route::get('/makanan', [MakananController::class, 'index'])->name('makanan.index');
