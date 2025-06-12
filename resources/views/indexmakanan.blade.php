@@ -66,18 +66,19 @@
                             <td>Rp{{ number_format($makanan->hargamakanan, 0, ',', '.') }}</td>
                             <td>
                                 @if ($makanan->tersedia)
-                                    <span class="badge badge-success">Tersedia</span>
+                                    <span class="badge-tersedia">Tersedia</span>
                                 @else
-                                    <span class="badge badge-danger">Tidak Tersedia</span>
+                                    <span class="badge-tidak">Tidak Tersedia</span>
                                 @endif
                             </td>
                             <td>{{ number_format($makanan->berat, 2, ',', '.') }} Kg</td>
                             <td>
-                                <a href="{{ route('makanan.edit', $makanan->id) }}" class="btn btn-warning btn-sm mr-1">Edit</a>
+                                <a href="{{ route('makanan.edit', $makanan->id) }}" class="btn-soft btn-edit mr-1">Edit</a>
                                 <form action="{{ route('makanan.destroy', $makanan->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        <button type="submit" class="btn-soft btn-hapus">Hapus</button>
+                                    </form>
                                 </form>
                             </td>
                         </tr>
