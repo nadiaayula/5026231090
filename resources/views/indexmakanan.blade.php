@@ -1,24 +1,29 @@
 @extends('templatemakanan')
 @section('content')
 
-    <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
-        <h3 class="mb-1">Manajemen Makanan</h3>
-        <div class="mb-3 d-inline-block px-3 py-1 rounded" style="background-color: #f1f3ff; color: #333; font-size: 0.95rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-            <strong>5026231090</strong> — Nadia Ayula Assyaputri
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h3 class="mb-0">Manajemen Makanan</h3>
     </div>
 
-    <!-- Ringkasan Data -->
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            @if (session('id_baru'))
+                (ID: {{ session('id_baru') }})
+            @endif
+            <button type="button" class="close" data-dismiss="alert" aria-label="Tutup">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     <div class="mb-3 p-3 rounded" style="background-color: #f9fafe; border: 1px solid #eee;">
         <strong>Total Data:</strong> {{ $total }} &nbsp; | &nbsp;
         <strong>Total Harga:</strong> Rp{{ number_format($totalHarga, 0, ',', '.') }} &nbsp; | &nbsp;
         <strong>Rata-rata Berat:</strong> {{ number_format($rataBerat, 2, ',', '.') }} Kg
     </div>
 
-    <!-- Tombol & Sorting -->
-    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-        <a href="{{ route('makanan.create') }}" class="btn btn-primary mb-2">+ Tambah Makanan Baru</a>
-
+    <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
         <form action="{{ route('makanan.index') }}" method="GET" class="form-inline mb-2">
             <input type="text" name="cari" placeholder="Cari Merk Makanan..." class="form-control mr-2" value="{{ request('cari') }}">
 
@@ -32,6 +37,8 @@
 
             <button type="submit" class="btn btn-outline-secondary">Terapkan</button>
         </form>
+
+        <a href="{{ route('makanan.create') }}" class="btn btn-primary mb-2">+ Tambah Makanan Baru</a>
     </div>
 
     @if ($makanans->isEmpty())
@@ -53,27 +60,27 @@
                 </thead>
                 <tbody>
                     @foreach ($makanans as $makanan)
-                    <tr>
-                        <td>{{ $makanan->id }}</td>
-                        <td>{{ $makanan->merkmakanan }}</td>
-                        <td>Rp{{ number_format($makanan->hargamakanan, 0, ',', '.') }}</td>
-                        <td>
-                            @if ($makanan->tersedia)
-                                <span class="badge-tersedia">Tersedia</span>
-                            @else
-                                <span class="badge-tidak">Tidak Tersedia</span>
-                            @endif
-                        </td>
-                        <td>{{ number_format($makanan->berat, 2, ',', '.') }} Kg</td>
-                        <td>
-                            <a href="{{ route('makanan.edit', $makanan->id) }}" class="btn-soft btn-edit mr-1">Edit</a>
-                            <form action="{{ route('makanan.destroy', $makanan->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-soft btn-hapus">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ $makanan->id }}</td>
+                            <td>{{ $makanan->merkmakanan }}</td>
+                            <td>Rp{{ number_format($makanan->hargamakanan, 0, ',', '.') }}</td>
+                            <td>
+                                @if ($makanan->tersedia)
+                                    <span class="badge badge-success">Tersedia</span>
+                                @else
+                                    <span class="badge badge-danger">Tidak Tersedia</span>
+                                @endif
+                            </td>
+                            <td>{{ number_format($makanan->berat, 2, ',', '.') }} Kg</td>
+                            <td>
+                                <a href="{{ route('makanan.edit', $makanan->id) }}" class="btn btn-warning btn-sm mr-1">Edit</a>
+                                <form action="{{ route('makanan.destroy', $makanan->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

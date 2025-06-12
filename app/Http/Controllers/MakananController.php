@@ -45,26 +45,29 @@ class MakananController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'merkmakanan'  => 'required|string|max:25',
-            'hargamakanan' => 'required|integer|min:0',
-            'tersedia'     => 'boolean',
-            'berat'        => 'required|numeric|min:0',
-        ]);
+    $request->validate([
+        'merkmakanan'  => 'required|string|max:25',
+        'hargamakanan' => 'required|integer|min:0',
+        'tersedia'     => 'boolean',
+        'berat'        => 'required|numeric|min:0',
+    ]);
 
-        $tersediaValue = $request->has('tersedia') ? 1 : 0;
+    $tersediaValue = $request->has('tersedia') ? 1 : 0;
 
-        DB::table('daftar_makanan')->insert([
-            'merkmakanan'  => $request->merkmakanan,
-            'hargamakanan' => $request->hargamakanan,
-            'tersedia'     => $tersediaValue,
-            'berat'        => $request->berat,
-            'created_at'   => now(),
-            'updated_at'   => now(),
-        ]);
+    $idBaru = DB::table('daftar_makanan')->insertGetId([
+        'merkmakanan'  => $request->merkmakanan,
+        'hargamakanan' => $request->hargamakanan,
+        'tersedia'     => $tersediaValue,
+        'berat'        => $request->berat,
+        'created_at'   => now(),
+        'updated_at'   => now(),
+    ]);
 
-        return redirect()->route('makanan.index')->with('success', 'Makanan berhasil ditambahkan!');
+    return redirect()->route('makanan.index')
+        ->with('success', 'Makanan berhasil ditambahkan!')
+        ->with('id_baru', $idBaru);
     }
+
 
     public function edit($id)
     {

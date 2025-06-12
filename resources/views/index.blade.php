@@ -1,4 +1,4 @@
-@extends('template')
+@extends('templatepegawai')
 @section('content')
 
 
