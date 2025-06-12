@@ -7,10 +7,34 @@ use Illuminate\Support\Facades\DB;
 
 class MakananController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $makanans = DB::table('daftar_makanan')->paginate(10);
-        return view('indexmakanan', compact('makanans'));
+        $query = DB::table('daftar_makanan');
+
+        // Pencarian
+        if ($request->has('cari')) {
+            $query->where('merkmakanan', 'like', "%{$request->cari}%");
+        }
+
+        // Sorting
+        if ($request->sort == 'harga_asc') {
+            $query->orderBy('hargamakanan', 'asc');
+        } elseif ($request->sort == 'harga_desc') {
+            $query->orderBy('hargamakanan', 'desc');
+        } elseif ($request->sort == 'berat_asc') {
+            $query->orderBy('berat', 'asc');
+        } elseif ($request->sort == 'berat_desc') {
+            $query->orderBy('berat', 'desc');
+        }
+
+        $makanans = $query->paginate(10);
+
+        // Data summary
+        $total = DB::table('daftar_makanan')->count();
+        $totalHarga = DB::table('daftar_makanan')->sum('hargamakanan');
+        $rataBerat = DB::table('daftar_makanan')->avg('berat');
+
+        return view('indexmakanan', compact('makanans', 'total', 'totalHarga', 'rataBerat'));
     }
 
     public function create()
