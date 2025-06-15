@@ -23,13 +23,13 @@ use App\Http\Controllers\KaryawanDBController;
 //latihan 1 Soal Perempuan
 Route::get('/latihan1', [PageCounterController::class, 'index']);
 
-//latihan 2 Soal Laki-Laki Ganjil
+//latihan 2 dan 3 Soal Laki-Laki Ganjil Genap
 //route karyawanDB
-Route::get('/latihan2', [KaryawanDBController::class, 'index']);
-Route::get('/latihan2/tambah', [KaryawanDBController::class, 'tambah']);
-Route::post('/latihan2/store', [KaryawanDBController::class, 'store']);
-Route::post('/latihan2/update',[KaryawanDBController::class, 'update']);
-Route::get('/latihan2/hapus/{id}', [KaryawanDBController::class, 'hapus']);
+Route::get('/latihan23', [KaryawanDBController::class, 'index']);
+Route::get('/latihan23/tambah', [KaryawanDBController::class, 'tambah']);
+Route::post('/latihan23/store', [KaryawanDBController::class, 'store']);
+Route::post('/latihan23/update',[KaryawanDBController::class, 'update']);
+Route::get('/latihan23/hapus/{id}', [KaryawanDBController::class, 'hapus']);
 
 //route makanan
 Route::get('/makanan', [MakananController::class, 'index'])->name('makanan.index');
