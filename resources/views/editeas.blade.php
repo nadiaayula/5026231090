@@ -10,7 +10,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nama Lengkap</label>
         <div class="col-sm-10">
-            <input type="text" name="namalengkap" value="{{ ucwords(strtolower($mykaryawan->namalengkap)) }}">
+            <input type="text" name="namalengkap" class="form-control" value="{{ ucwords(strtolower($mykaryawan->namalengkap)) }}">
         </div>
     </div>
     <div class="form-group row">
