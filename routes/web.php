@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\PageCounterController;
 use App\Http\Controllers\KaryawanDBController;
+use App\Http\Controllers\MyKaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,12 @@ use App\Http\Controllers\KaryawanDBController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//EAS
+Route::get('/eas', [MyKaryawanController::class, 'index']);
+Route::get('/eas/edit/{kodepegawai}', [MyKaryawanController::class, 'edit']);
+Route::post('/eas/update', [MyKaryawanController::class, 'update']);
+Route::get('/eas/view/{kodepegawai}', [MyKaryawanController::class, 'view']);
 
 //latihan 1 Soal Perempuan
 Route::get('/latihan1', [PageCounterController::class, 'index']);

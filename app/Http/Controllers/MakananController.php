@@ -76,8 +76,6 @@ class MakananController extends Controller
         if (!$makanan) {
             abort(404);
         }
-
-        // Mengubah view path dari 'makanan.edit' menjadi 'editmakanan'
         return view('editmakanan', compact('makanan'));
     }
 

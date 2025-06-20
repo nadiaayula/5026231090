@@ -9,7 +9,7 @@ class KaryawanDBController extends Controller
 {
     public function index()
     {
-        $karyawan = DB::table('karyawan')->paginate(10);
+        $karyawan = DB::table('karyawan')->get();
     	return view('indexlatihan2',['karyawan' => $karyawan]);
     }
 

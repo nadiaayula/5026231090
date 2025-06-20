@@ -34,9 +34,4 @@
     </tbody>
 </table>
 
-<!-- Pagination bawah -->
-        <div class="d-flex justify-content-center">
-            {{ $karyawan->appends(request()->query())->links('pagination::bootstrap-4') }}
-        </div>
-
 @endsection

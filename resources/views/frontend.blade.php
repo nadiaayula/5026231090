@@ -185,10 +185,10 @@
     <a href="/publish">All Front End</a>
     <a href="/pegawai">Pegawai</a>
     <a href="/makanan">Tugas CRUD</a>
-    <a href="#">EAS</a>
+    <a href="/eas">EAS</a>
     <a href="/latihan1">Latihan 1</a>
-    <a href="/latihan2">Latihan 2</a>
-    <a href="#">Latihan 3</a>
+    <a href="/latihan23">Latihan 2</a>
+    <a href="/latihan23">Latihan 3</a>
     </div>
 
     <div class="profile">

@@ -122,7 +122,7 @@
             <li class="nav-item"><a class="nav-link" href="/publish">All Front End</a></li>
             <li class="nav-item"><a class="nav-link" href="/pegawai">Pegawai</a></li>
             <li class="nav-item"><a class="nav-link" href="/makanan">Tugas CRUD</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">EAS</a></li>
+            <li class="nav-item"><a class="nav-link" href="/eas">EAS</a></li>
             <li class="nav-item"><a class="nav-link" href="/latihan1">Latihan 1</a></li>
             <li class="nav-item"><a class="nav-link" href="/latihan23">Latihan 2</a></li>
             <li class="nav-item"><a class="nav-link" href="/latihan23">Latihan 3</a></li>
